@@ -1,0 +1,15 @@
+created:
+    - app/Http/Controllers/TaskController.php
+    - database/factories/TaskFactory.php
+    - database/migrations/2024_09_14_121118_create_tasks_table.php
+    - app/Models/Task.php
+    - tests/Feature/Http/Controllers/TaskControllerTest.php
+    - app/Events/NewTask.php
+    - app/Http/Requests/TaskStoreRequest.php
+    - app/Mail/taskCreated.php
+    - resources/views/emails/task-created.blade.php
+    - resources/views/task.blade.php
+updated:
+    - routes/web.php
+models:
+    Task: { name: string, provided_by: string, start_at: date, end_at: date, status: 'enum:hold,pending,in_progress,completed', softdeletes: softDeletes, timestamp: true }

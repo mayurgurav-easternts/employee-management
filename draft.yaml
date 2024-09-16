@@ -1,0 +1,25 @@
+models:
+  Task:
+   name: string
+   provided_by: string
+   start_at: date
+   end_at: date
+   status: enum:hold,pending,in_progress,completed
+   softDeletes: true
+   timestamp: true
+
+controllers:
+  Task: 
+    index:
+      query: all
+      render: task
+    store: 
+      validate: content
+      save: task
+      fire: NewTask with:task
+      send: taskCreated with:task
+      flash: message
+      redirect: task.create
+
+    
+  

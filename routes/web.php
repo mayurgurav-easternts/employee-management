@@ -15,6 +15,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/attendance', EmployeeAttendanceCrud::class)->name('employee-attendances.index');
     // Employee Leave Routes
     Route::get('/leaves', EmployeeLeaveCrud::class)->name('employee-leaves.index');
+    Route::resource('tasks', App\Http\Controllers\TaskController::class)->only('index', 'store');
 });
 
 require __DIR__ . '/auth.php';
+
+
+
